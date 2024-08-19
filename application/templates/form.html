@@ -1,0 +1,24 @@
+{% extends "layout.html" %} <!-- hämtar från layout.html -->
+{% block title %}Form{% endblock %}
+{% block content %}
+<div class="container">
+<div class="row">
+<div class="col">
+<h1 class="text-center">El priser i Sverige</h1> <!-- Rubrik för formulär -->
+<form action="api" method="post"> <!-- Formulär med åtgärd inställd på "api"-endpunkt med HTTP POST-metoden-->
+    <input type="date" id="kalender" name="kalender"/><br> <!-- kalender med input type date -->
+  <select id="price" name="price"><!--Rullgardinsmeny för att välja ett prisalternativ-->
+   <option value="SE1">Luleå / Norra Sverige</option>
+   <option value="SE2">Sundsvall / Norra Mellansverige</option>
+   <option value="SE3">Stockholm / Södra Mellansverige</option>
+   <option value="SE4">Malmö / Södra Sverige</option>
+</select>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+    {% if error_message %} <!-- en if sats om variabeln error_message som finns i app.py kommer. så skriva ut det. med röd text-->
+      <p style="color: red;">{{ error_message }}</p>
+      {% endif %}
+</div>
+</div>
+</div>
+{% endblock %}

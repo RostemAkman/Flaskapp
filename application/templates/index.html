@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block content %}
+<div class="container">
+<div class="row">
+<div class="col">
+<h1 class="text-center">El priser</h1>
+{{data|safe}} <!--Inkluderar data och använder "|safe" för att undvika att HTML-escape-ning tillämpas-->
+    <a class="btn btn-primary mt-5 mb-5" href="form" role="button">Enter data</a>
+</div>
+</div>
+</div>
+{% endblock %}
